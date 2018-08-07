@@ -1,7 +1,7 @@
 resource "google_compute_instance" "firstserver" {
-  name = "thefirstserver"
+  name         = "thefirstserver"
   machine_type = "n1-standard-1"
-  zone = "europe-west2-a"
+  zone         = "europe-west2-a"
 
   boot_disk {
     initialize_params {
@@ -12,9 +12,7 @@ resource "google_compute_instance" "firstserver" {
   network_interface {
     subnetwork = "${google_compute_subnetwork.dev-subnet.name}"
 
-    access_config {
-      
-    }
+    access_config {}
   }
 
   metadata {
@@ -30,12 +28,12 @@ data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
-    name = "name"
+    name   = "name"
     values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
   }
 
   filter {
-    name = "virtualization-type"
+    name   = "virtualization-type"
     values = ["hvm"]
   }
 
