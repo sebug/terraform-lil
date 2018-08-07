@@ -5,13 +5,13 @@ variable network_name {
   description = "Just the network name for the Google Compute Platform."
 }
 
-# variable new_value {
+variable new_value {
 
-# }
+}
 
-# variable newmap {
-#   type = "map"
-# }
+variable newmap {
+  type = "map"
+}
 
 variable gcp_ip_cidr_range {
   default = "10.0.0.0/16"
